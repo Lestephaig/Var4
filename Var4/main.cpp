@@ -45,6 +45,28 @@ int main() {
                 std::cout << "Введите цвет: ";
                 std::cin >> color;
 
+                if (categoryChoice == 1) {
+                    std::cout << "Введите тип питания: ";
+                    std::cin >> param1;
+                    keeper.addAnimal(std::make_unique<Fish>(breed, color, param1));
+                }
+                else if (categoryChoice == 2) {
+                    std::cout << "Введите место обитания: ";
+                    std::cin >> param1;
+                    keeper.addAnimal(std::make_unique<Bird>(breed, color, param1));
+                }
+                else if (categoryChoice == 3) {
+                    std::cout << "Введите имя владельца: ";
+                    std::cin >> param1;
+                    std::cout << "Введите кличку: ";
+                    std::cin >> param2;
+                    keeper.addAnimal(std::make_unique<Cat>(breed, color, param1, param2));
+                }
+                else {
+                    std::cout << "Некорректный выбор категории\n";
+                }
+                break;
+            }
             case 2: {
                 std::cout << "\nВведите индекс животного для удаления: ";
                 size_t index;
